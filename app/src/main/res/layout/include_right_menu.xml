@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/color_2b2b2b"
+    android:background="@drawable/zero_ui_drawer_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -62,14 +62,14 @@
                        android:id="@+id/key_bord_button"
                        android:layout_width="0dp"
                        android:layout_weight="1"
-                       style="?android:attr/buttonBarButtonStyle"
+                       style="@style/ZeroUiActionButton"
                        android:textColor="@color/color_ffffff"
                        android:layout_height="wrap_content"
                        android:text="@string/action_toggle_soft_keyboard" />
 
                    <Button
                        android:id="@+id/new_session_button"
-                       style="?android:attr/buttonBarButtonStyle"
+                       style="@style/ZeroUiActionButton"
                        android:textColor="@color/color_ffffff"
                        android:layout_width="0dp"
                        android:layout_weight="1"
@@ -83,13 +83,13 @@
        </RelativeLayout>
        <androidx.cardview.widget.CardView
            android:layout_width="match_parent"
-           android:layout_marginTop="5dp"
-           android:layout_marginRight="5dp"
-           android:layout_marginLeft="5dp"
-           android:layout_marginBottom="5dp"
+           android:layout_marginTop="8dp"
+           android:layout_marginRight="12dp"
+           android:layout_marginLeft="12dp"
+           android:layout_marginBottom="12dp"
            app:cardElevation="0dp"
-           app:cardBackgroundColor="@color/color_55000000"
-           app:cardCornerRadius="6dp"
+           app:cardBackgroundColor="@color/zero_ui_card"
+           app:cardCornerRadius="16dp"
            android:layout_height="wrap_content">
 
            <LinearLayout
@@ -99,24 +99,24 @@
                android:orientation="horizontal">
                <Button
                    android:id="@+id/toggle_keyboard_button"
-                   style="?android:attr/buttonBarButtonStyle"
-                   android:layout_width="match_parent"
+                   style="@style/ZeroUiActionButton"
+                   android:layout_width="0dp"
                    android:textColor="@color/color_ffffff"
                    android:layout_height="wrap_content"
                    android:layout_weight="1"
                    android:text="@string/file_manager" />
                <Button
                    android:id="@+id/select_new_session_button"
-                   style="?android:attr/buttonBarButtonStyle"
+                   style="@style/ZeroUiActionButton"
                    android:textColor="@color/color_ffffff"
-                   android:layout_width="match_parent"
+                   android:layout_width="0dp"
                    android:layout_height="wrap_content"
                    android:layout_weight="1"
                    android:text="@string/select_session" />
                <Button
                    android:id="@+id/deepseek"
-                   style="?android:attr/buttonBarButtonStyle"
-                   android:layout_width="match_parent"
+                   style="@style/ZeroUiActionButton"
+                   android:layout_width="0dp"
                    android:textColor="@color/color_ffffff"
                    android:layout_height="wrap_content"
                    android:layout_weight="1"

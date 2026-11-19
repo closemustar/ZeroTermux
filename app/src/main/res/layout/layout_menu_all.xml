@@ -4,17 +4,17 @@
     android:id="@+id/layout_menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_2b2b2b"
+    android:background="@drawable/zero_ui_drawer_background"
     android:orientation="vertical">
 
     <ScrollView
         android:id="@+id/scrollView_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="10dp">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,8 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="2dp"
-                app:cardBackgroundColor="@color/color_55000000"
-                app:cardCornerRadius="8dp"
+                app:cardBackgroundColor="@color/zero_ui_card"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="0dp">
 
                 <LinearLayout
@@ -138,8 +138,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="2dp"
-                app:cardBackgroundColor="@color/color_55000000"
-                app:cardCornerRadius="8dp"
+                app:cardBackgroundColor="@color/zero_ui_card"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="0dp">
 
                 <LinearLayout
@@ -177,8 +177,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="2dp"
-                app:cardBackgroundColor="@color/color_55000000"
-                app:cardCornerRadius="8dp"
+                app:cardBackgroundColor="@color/zero_ui_card"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="0dp">
 
                 <RelativeLayout
@@ -223,8 +223,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="2dp"
-                    app:cardBackgroundColor="@color/color_55000000"
-                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@color/zero_ui_card"
+                    app:cardCornerRadius="16dp"
                     app:cardElevation="0dp">
 
                     <LinearLayout
@@ -312,8 +312,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="2dp"
-                    app:cardBackgroundColor="@color/color_55000000"
-                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@color/zero_ui_card"
+                    app:cardCornerRadius="16dp"
                     app:cardElevation="0dp">
 
                     <LinearLayout
@@ -366,8 +366,8 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="2dp"
                     android:visibility="gone"
-                    app:cardBackgroundColor="@color/color_55000000"
-                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@color/zero_ui_card"
+                    app:cardCornerRadius="16dp"
                     app:cardElevation="0dp">
 
                     <RelativeLayout
@@ -402,8 +402,8 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="2dp"
                     android:visibility="gone"
-                    app:cardBackgroundColor="@color/color_55000000"
-                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@color/zero_ui_card"
+                    app:cardCornerRadius="16dp"
                     app:cardElevation="0dp">
 
                     <LinearLayout

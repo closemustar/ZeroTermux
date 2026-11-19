@@ -2242,22 +2242,22 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
                 // 设置左边菜单背景
                 Bitmap leftBitMap = BitmapUtils.getBitmap(FileIOUtils.INSTANCE.getLeftMenuBackFile());
                 if (leftBitMap == null) {
-                    mLayoutMenuAll.setBackgroundColor(getColor(R.color.color_2b2b2b));
+                    mLayoutMenuAll.setBackgroundResource(R.drawable.zero_ui_drawer_background);
                 } else {
                     mLayoutMenuAll.setBackground(new BitmapDrawable(leftBitMap));
                 }
                 // 设置右边菜单背景
                 Bitmap rightBitMap = BitmapUtils.getBitmap(FileIOUtils.INSTANCE.getRightMenuBackFile());
                 if (rightBitMap == null) {
-                    mIncludeRightMenu.setBackgroundColor(getColor(R.color.color_2b2b2b));
+                    mIncludeRightMenu.setBackgroundResource(R.drawable.zero_ui_drawer_background);
                 } else {
                     mIncludeRightMenu.setBackground(new BitmapDrawable(rightBitMap));
                 }
 
             });
         } else {
-            mLayoutMenuAll.setBackgroundColor(getColor(R.color.color_2b2b2b));
-            mIncludeRightMenu.setBackgroundColor(getColor(R.color.color_2b2b2b));
+            mLayoutMenuAll.setBackgroundResource(R.drawable.zero_ui_drawer_background);
+            mIncludeRightMenu.setBackgroundResource(R.drawable.zero_ui_drawer_background);
         }
     }
     private void writerMainMenuConfig(boolean cover) {

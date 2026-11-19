@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="zero_ui_background">#10131A</color>
+    <color name="zero_ui_surface">#181D26</color>
+    <color name="zero_ui_surface_raised">#202735</color>
+    <color name="zero_ui_accent">#6E9BFF</color>
+    <color name="zero_ui_accent_light">#426FE0</color>
+    <color name="zero_ui_text">#EEF2FA</color>
+    <color name="zero_ui_text_secondary">#A2ADC0</color>
+    <color name="zero_ui_border">#2A3445</color>
+    <color name="zero_ui_card">#CC202735</color>
+</resources>
