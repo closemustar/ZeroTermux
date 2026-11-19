@@ -1,0 +1,63 @@
+name: Verify Native APK
+
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Download native APK
+        uses: actions/download-artifact@v7
+        with:
+          name: ZeroTermux-Nightly_debug_arm64-v8a
+          path: apk
+          github-token: ${{ github.token }}
+          run-id: 44454364064
+      - name: Verify signature and package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p verification
+          APK_PATH=$(find apk -type f -name '*.apk' -print -quit)
+          test -n "$APK_PATH"
+          SDK_PATH="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          SIGNER_PATH=$(find "$SDK_PATH/build-tools" -type f -name apksigner | sort -V | tail -n 1)
+          AAPT_PATH=$(find "$SDK_PATH/build-tools" -type f -name aapt | sort -V | tail -n 1)
+          "$SIGNER_PATH" verify --verbose --print-certs "$APK_PATH" | tee verification/signature.txt
+          grep -Fi '4a246f97551128dd855e5eeed3326a409454dd7cc6b7fc5268aa8528ad0a81e7' verification/signature.txt
+          "$AAPT_PATH" dump badging "$APK_PATH" | tee verification/package.txt
+          grep -F "package: name='com.termux'" verification/package.txt
+          grep -F "targetSdkVersion:'28'" verification/package.txt
+          sha256sum "$APK_PATH" | tee verification/sha256.txt
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import zipfile
+          apk = next(Path('apk').rglob('*.apk'))
+          with zipfile.ZipFile(apk) as archive:
+              assert archive.testzip() is None
+              names = archive.namelist()
+              assert 'AndroidManifest.xml' in names
+              assert 'classes.dex' in names
+              assert 'lib/arm64-v8a/libtermux.so' in names
+              plugins = [name for name in names if name.startswith('assets/apk/')]
+              assert len(plugins) > 0
+              report = {'apk': apk.name, 'size': apk.stat().st_size, 'native_terminal': True, 'bundled_plugins': plugins}
+          Path('verification/components.json').write_text(json.dumps(report, ensure_ascii=False, indent=2))
+          print(json.dumps(report, ensure_ascii=False))
+          PY
+      - name: Upload verification report
+        uses: actions/upload-artifact@v7
+        with:
+          name: ZeroTermux-native-verification
+          path: verification
