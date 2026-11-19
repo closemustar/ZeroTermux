@@ -211,3 +211,4 @@ jobs:
           name: ZeroTermux-Nightly_release_x86_64
           path: app/build/outputs/apk/release/*_x86_64.apk
           if-no-files-found: ignore
+
